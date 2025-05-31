@@ -121,8 +121,8 @@ struct projectionconfig *get_projection(const char *srs)
 		prj->bound_y1 = 20037508.3428;
 		prj->aspect_x = 1;
 		prj->aspect_y = 1;
-	} else if (strcmp(srs, "+proj=dymaxion") == 0) {
-		g_logger(G_LOG_LEVEL_DEBUG, "Using dymaxion projection settings");
+	} else if (strcmp(srs, "+proj=airocean") == 0) {
+		g_logger(G_LOG_LEVEL_DEBUG, "Using airocean projection settings");
 		prj = (struct projectionconfig *)malloc(sizeof(struct projectionconfig));
 		prj->bound_x0 = 0;
 		prj->bound_y0 = 0;
