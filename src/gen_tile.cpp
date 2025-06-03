@@ -124,16 +124,16 @@ struct projectionconfig *get_projection(const char *srs)
 	} else if (strcmp(srs, "+proj=airocean") == 0) {
 		g_logger(G_LOG_LEVEL_DEBUG, "Using airocean projection settings");
 		prj = (struct projectionconfig *)malloc(sizeof(struct projectionconfig));
-		// prj->bound_x0 = 0;
-		// prj->bound_y0 = 0;
-		// prj->bound_x1 = 36843762.0684;
-		// prj->bound_y1 = 36843762.0684;
-		prj->bound_x0 = -18421881.03421;
-		prj->bound_y0 = -18421881.03421;
+		prj->bound_x0 = 0.0;
+		prj->bound_y0 = 0.0;
 		prj->bound_x1 = 18421881.03421;
-		prj->bound_y1 = 18421881.03421; 
+		prj->bound_y1 = 36843762.0684;
+		// prj->bound_x0 = -18421881.03421;
+		// prj->bound_y0 = -18421881.03421;
+		// prj->bound_x1 = 18421881.03421;
+		// prj->bound_y1 = 18421881.03421; 
 		prj->aspect_x = 1;
-		prj->aspect_y = 1;
+		prj->aspect_y = 2;
 	} else if (strcmp(srs, "+proj=eqc +lat_ts=0 +lat_0=0 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs") == 0) {
 		g_logger(G_LOG_LEVEL_DEBUG, "Using plate carree projection settings");
 		prj = (struct projectionconfig *)malloc(sizeof(struct projectionconfig));
